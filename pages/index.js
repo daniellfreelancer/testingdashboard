@@ -1,5 +1,6 @@
 import Barchart from '@/components/Barchart'
 import Header from '@/components/Header'
+import Login from '@/components/Login'
 import RecentOrders from '@/components/RecentOrders'
 import Topcards from '@/components/Topcards'
 import Head from 'next/head'
@@ -15,13 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='bg-gray-100 min-h-screen' >
-        <Header/>
-        <Topcards/>
-       <div className='p-4 grid md:grid-cols-3 gap-4'>
-        <Barchart/>
-        <RecentOrders/>
-        </div> 
-
+        <Login/>
       </main>
     </>
   )

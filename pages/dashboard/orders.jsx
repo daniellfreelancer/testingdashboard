@@ -1,12 +1,16 @@
 import React from 'react'
 import { FaShoppingBag } from 'react-icons/fa'
 import { BsThreeDotsVertical } from 'react-icons/bs';
-import { data } from '../data/data'
+import { data } from '../../data/data'
+import Sidebar from '@/components/Sidebar';
 
 
 
 const orders = () => {
     return (
+        <Sidebar>
+
+        
         <div className='bg-gray-100 min-h-screen'>
             <div className='flex justify-between px-4 pt-4 '>
                 <h2>Ordenes</h2>
@@ -55,6 +59,7 @@ const orders = () => {
 
             </div>
         </div>
+        </Sidebar>
     )
 }
 

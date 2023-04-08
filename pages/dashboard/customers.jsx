@@ -1,10 +1,12 @@
 import React from 'react'
 import { BsPersonFill, BsThreeDotsVertical } from 'react-icons/bs';
-import { data } from '../data/data'
+import { data } from '../../data/data'
+import Sidebar from '@/components/Sidebar';
 
 
 export default function Customers() {
     return (
+        <Sidebar>
         <div className='bg-gray-100 min-h-screen'>
             <div className='flex justify-between p-4' >
                 <h2>Customers</h2>
@@ -47,5 +49,6 @@ export default function Customers() {
 
             </div>
         </div>
+        </Sidebar>
     )
 }
