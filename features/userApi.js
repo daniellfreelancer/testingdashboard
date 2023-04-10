@@ -19,4 +19,5 @@ const userSlice = createSlice({
 })
 
 export const { setCredentials, deleteCredentials } = userSlice.actions
+export const adminValue = (state)=>state.auth.user
 export default userSlice.reducer

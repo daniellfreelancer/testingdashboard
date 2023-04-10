@@ -5,6 +5,7 @@ import RecentOrders from '@/components/RecentOrders'
 import Topcards from '@/components/Topcards'
 import Head from 'next/head'
 import Image from 'next/image'
+import { Router } from 'react-router-dom'
 
 export default function Home() {
   return (

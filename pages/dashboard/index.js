@@ -14,8 +14,7 @@ export default function Dashboard() {
        <div className='p-4 grid md:grid-cols-3 gap-4'>
         <Barchart/>
         <RecentOrders/>
-        </div> 
-
+        </div>
       </main>
   </Sidebar>
   )

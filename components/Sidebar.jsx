@@ -5,6 +5,8 @@ import {RxSketchLogo, RxDashboard, RxPerson} from 'react-icons/rx'
 import {HiOutlineBell, HiCog} from 'react-icons/hi'
 import logoVM from '../public/logoVMDark.png'
 import { FaShoppingBag } from 'react-icons/fa'
+import {GrPlan} from 'react-icons/gr'
+import {MdOutlineCreateNewFolder} from 'react-icons/md'
 export default function Sidebar({children}) {
   return (
     <div className='flex justify-between' >
@@ -43,13 +45,13 @@ export default function Sidebar({children}) {
                 </Link>
                 <Link href={'/dashboard/educationplans'} >
                     <div className="bg-purple-200 hover:bg-gray-200 text-dark p-3 mb-3 rounded-lg  flex gap-5 w-[15rem]" >
-                        <FaShoppingBag size={20} />
+                        <GrPlan size={20} />
                         <h2>Planificación Educativa</h2> 
                     </div>
                 </Link>
                 <Link href={'/dashboard/createplans'} >
                     <div className="bg-purple-200 hover:bg-gray-200 text-dark p-3 mb-3 rounded-lg  flex gap-5 w-[15rem] " >
-                        <FaShoppingBag size={20} />
+                        <MdOutlineCreateNewFolder size={20} />
                         <h2>Crear Planificación</h2> 
                     </div>
                 </Link>

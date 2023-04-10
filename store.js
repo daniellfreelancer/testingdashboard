@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import reloadSlice from "./features/reloadSlice";
 import userReducer from "./features/userApi";
 import storage from "redux-persist/lib/storage";
+import loginAPI from "./features/loginAPI";
 import {
     persistStore,
     persistReducer,
@@ -26,6 +27,7 @@ import {
 export const store = configureStore({
     reducer:{
         auth: persistedReducer,
+        [loginAPI.reducerPath]: loginAPI.reducer,
         reload: reloadSlice,
         
     },
@@ -34,7 +36,7 @@ export const store = configureStore({
         serializableCheck: {
           ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
         },
-      })
+      }).concat(loginAPI.middleware)
 })
 
 
