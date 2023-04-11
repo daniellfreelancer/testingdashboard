@@ -4,9 +4,12 @@ import Image from 'next/image'
 import {RxSketchLogo, RxDashboard, RxPerson} from 'react-icons/rx'
 import {HiOutlineBell, HiCog} from 'react-icons/hi'
 import logoVM from '../public/logoVMDark.png'
-import { FaShoppingBag } from 'react-icons/fa'
 import {GrPlan} from 'react-icons/gr'
-import {MdOutlineCreateNewFolder} from 'react-icons/md'
+import {MdOutlineCreateNewFolder, MdOutlineSchool} from 'react-icons/md'
+import {BiHomeAlt2} from 'react-icons/bi'
+import {VscOrganization} from 'react-icons/vsc'
+import {IoSchoolOutline} from 'react-icons/io'
+
 export default function Sidebar({children}) {
   return (
     <div className='flex justify-between' >
@@ -21,25 +24,31 @@ export default function Sidebar({children}) {
                 <span className='border-b-[1px] border-gray-200 w-full p-2 mb-5 ' > </span>
                 <Link href={'/dashboard'}  >
                     <div className="bg-purple-200 hover:bg-gray-200 text-dark p-3 mb-3 rounded-lg  flex gap-5 w-[15rem] " >
-                        <RxDashboard size={20} />
-                        <h2>Stats</h2> 
+                        <BiHomeAlt2 size={20} />
+                        <h2>Home</h2> 
                     </div>
                 </Link>
-                <Link href={'/dashboard/customers'} >
+                <Link href={'/dashboard/vmusers'} >
                     <div className="bg-purple-200 hover:bg-gray-200 text-dark p-3 mb-3 rounded-lg  flex gap-5 w-[15rem] " >
                         <RxPerson size={20} />
                         <h2>Usuarios</h2> 
                     </div>
                 </Link>
-                <Link href={'/dashboard/orders'} >
+                <Link href={'/dashboard/notifications'} >
                     <div className="bg-purple-200 hover:bg-gray-200 text-dark p-3 mb-3 rounded-lg flex gap-5 w-[15rem]" >
                         <HiOutlineBell size={20} />
-                        <h2>Ordenes</h2> 
+                        <h2>Notificaciones</h2> 
                     </div>
                 </Link>
-                <Link href={'/dashboard/educationplans'} >
+                <Link href={'/dashboard/institutional'} >
+                    <div className="bg-purple-200 hover:bg-gray-200 text-dark p-3 mb-3 rounded-lg flex gap-5 w-[15rem]" >
+                        <VscOrganization size={20} />
+                        <h2>Instituciones</h2> 
+                    </div>
+                </Link>
+                <Link href={'/dashboard/vmclass'} >
                     <div className="bg-purple-200 hover:bg-gray-200 text-dark p-3  mb-3 rounded-lg flex gap-5 w-[15rem]" >
-                        <HiCog size={20} />
+                        <MdOutlineSchool size={20} />
                         <h2>Vm Class</h2> 
                     </div>
                 </Link>
@@ -51,7 +60,7 @@ export default function Sidebar({children}) {
                 </Link>
                 <Link href={'/dashboard/createplans'} >
                     <div className="bg-purple-200 hover:bg-gray-200 text-dark p-3 mb-3 rounded-lg  flex gap-5 w-[15rem] " >
-                        <MdOutlineCreateNewFolder size={20} />
+                        <HiCog size={20} />
                         <h2>Crear Planificación</h2> 
                     </div>
                 </Link>

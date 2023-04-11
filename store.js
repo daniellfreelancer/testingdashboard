@@ -14,6 +14,7 @@ import {
     PURGE,
     REGISTER,
   } from "redux-persist";
+import plannerAPI from "./features/plannerAPI";
 
   const persistConfig = {
     key: "root",
@@ -28,6 +29,7 @@ export const store = configureStore({
     reducer:{
         auth: persistedReducer,
         [loginAPI.reducerPath]: loginAPI.reducer,
+        [plannerAPI.reducerPath] : plannerAPI.reducer,
         reload: reloadSlice,
         
     },
@@ -36,7 +38,7 @@ export const store = configureStore({
         serializableCheck: {
           ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
         },
-      }).concat(loginAPI.middleware)
+      }).concat(loginAPI.middleware, plannerAPI.middleware)
 })
 
 

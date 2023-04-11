@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 
-const uriLocal = "http://localhost:3000"
+
 const uriWeb = "https://testingdashboardvm.netlify.app"
+//const uriWeb = "http://localhost:3000"
 
 export default function middleware(req){
     let verify = req.cookies.get('adminToken') ;

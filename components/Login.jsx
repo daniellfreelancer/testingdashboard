@@ -8,11 +8,13 @@ import { setCredentials } from '@/features/userApi';
 import { useSigninMutation } from '@/features/loginAPI';
 import swal from 'sweetalert2';
 import Cookies from 'js-cookie'
+import Loader from './Loader'
 export default function Login() {
 
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [isLoader, setIsLoader] = useState(false)
     const router = useRouter()
     const dispatch = useDispatch();
     const [loginReducer] = useSigninMutation();
@@ -20,16 +22,20 @@ export default function Login() {
 
     async function handleLogin(){
 
+        setIsLoader(!isLoader)
+
         loginReducer({email, password })
         .then((res)=>{
           if (res.error){
             let dataError = res.error
             let dataMessage = dataError.data
+            setIsLoader(false)
             swal.fire({
               title: "Error!",
               text: dataMessage.message,
               icon: "error",
             });
+            
     
             } else {
               let dataResponse = res.data
@@ -69,11 +75,21 @@ export default function Login() {
             <input type="text" className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" value={email} onChange={(e) => setEmail(e.target.value)}  />
             <label className="font-semibold text-sm text-gray-600 pb-1 block">Password</label>
             <input type="password" className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <button type="button" className="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block " onClick={handleLogin} >
+            <button type="button" className="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center flex items-center justify-center " onClick={handleLogin} >
                 <span className="inline-block mr-2">Ingresar</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-4 h-4 inline-block">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+
+                {
+                    isLoader ? ( <Loader/>) : (
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-4 h-4 inline-block">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                    )
+                }
+
+
+
+               
+
             </button>
           </div>
           {/* <div className="p-5">

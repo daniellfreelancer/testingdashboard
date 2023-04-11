@@ -3,22 +3,25 @@ import { FaShoppingBag } from 'react-icons/fa'
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { data } from '../../data/data'
 import Sidebar from '@/components/Sidebar';
+import Header from '@/components/Header';
 
 
 
-const orders = () => {
+const notifications = () => {
     return (
         <Sidebar>
 
         
         <div className='bg-gray-100 min-h-screen'>
-            <div className='flex justify-between px-4 pt-4 '>
+            {/* <div className='flex justify-between px-4 pt-4 '>
                 <h2>Ordenes</h2>
                 <h2>Welcome Back, Client</h2>
-            </div>
+            </div> */}
+            <Header/>
             <div className='p-4'>
                 <div className='w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto' >
-                    <div className='my-3 p-2 grid md:grid-cols-4 sm:rid-cols-3 grid-cols-2 items-center justify-between' >
+                    <h2>Notificaciones</h2>
+                    {/* <div className='my-3 p-2 grid md:grid-cols-4 sm:rid-cols-3 grid-cols-2 items-center justify-between' >
                         <span>Order</span>
                         <span className='sm:text-left text-right' >Status</span>
                         <span className='hidden md:grid' >Last Order</span>
@@ -53,7 +56,7 @@ const orders = () => {
                                 </li>
                             ))
                         }
-                    </ul>
+                    </ul> */}
 
                 </div>
 
@@ -63,4 +66,4 @@ const orders = () => {
     )
 }
 
-export default orders
+export default notifications
