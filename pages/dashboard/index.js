@@ -10,10 +10,11 @@ export default function Dashboard() {
     <Sidebar>
          <main className='bg-gray-200 min-h-screen min-w-screen' >
         <Header/>
-        <Topcards/>
+        {/* <Topcards/> */}
        <div className='p-4 grid md:grid-cols-3 gap-4'>
-        <Barchart/>
-        <RecentOrders/>
+        <h2>Home</h2>
+        {/* <Barchart/>
+        <RecentOrders/> */}
         </div>
       </main>
   </Sidebar>

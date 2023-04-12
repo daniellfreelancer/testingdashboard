@@ -18,7 +18,7 @@ export default function VmUsers() {
 
     useEffect(() => {
         axios.get('https://whale-app-qsx89.ondigitalocean.app/admin/users').then((res)=>{
-            console.log(res.data.users)
+
             if (res.data){
                 setUsersData(res.data.users)
             }
