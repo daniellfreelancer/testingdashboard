@@ -57,7 +57,7 @@ export default function VmUsers() {
                                     <div className='bg-purple-100 p-3 rounded-lg'>
                                         <BsPersonFill className='text-purple-800' />
                                     </div>
-                                    <p className='pl-4' >{ `${user.username}`} </p>
+                                    <p className='pl-4' >{ `${user.name} ${user.lastName}`} </p>
                                     </div>
                                     <p className='text-gray-600 sm:text-left text-right '> {user.email}</p>
                                     <p className={user.logged === "true" ? 'bg-green-200 p-2 rounded-lg w-[4rem] text-green-900' : 'bg-red-200 p-2 rounded-lg w-[4rem] text-red-900 hidden md:flex'  } > {user.logged === "true" ? "Online" : "Offline"}  </p>
