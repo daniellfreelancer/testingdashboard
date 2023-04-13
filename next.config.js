@@ -50,7 +50,7 @@ module.exports = withPWA({
   ...nextConfig,
   pwa: {
     dest: 'public',
-    swSrc: 'service-worker.js',
-    // otras opciones de configuración que desee establecer para el plugin GenerateSW
+    register: true,
+    skipWaiting: true,
   },
 });
